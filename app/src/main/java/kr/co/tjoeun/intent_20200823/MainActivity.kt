@@ -64,6 +64,16 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+//        CALL 액션 예제 => 실행 불가
+
+        callBtn.setOnClickListener {
+            val inputPhoneNum = phoneNumEdt.text.toString()
+
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_CALL, myUri)
+            startActivity(myIntent)
+        }
+
     }
 
 //   결과를 가지고 돌아올때 실행되는 함수.
